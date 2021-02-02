@@ -1,0 +1,22 @@
+{
+  "name": "cogs220",
+  "version": "1.0.0",
+  "description": "Cogs Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ktenney96/Cogs220.git"
+  },
+  "author": "Kristin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ktenney96/Cogs220/issues"
+  },
+  "homepage": "https://github.com/ktenney96/Cogs220#readme",
+  "dependencies": {
+    "vega-lite-api": "^0.15.0"
+  }
+}
