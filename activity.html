@@ -1,0 +1,217 @@
+
+<html>
+<!-- Script stuff -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.19.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.15.1"></script>
+
+<!-- All this stuff is for the buttons-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .btn {
+      border: none;
+      color: white;
+      padding: 14px 28px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .success {background-color: #4CAF50;} /* Green */
+    .success:hover {background-color: #46a049;}
+    
+    .info {background-color: #2196F3;} /* Blue */
+    .info:hover {background: #0b7dda;}
+    
+    .warning {background-color: #ff9800;} /* Orange */
+    .warning:hover {background: #e68a00;}
+    
+    .danger {background-color: #f44336;} /* Red */ 
+    .danger:hover {background: #da190b;}
+    
+    .default {background-color: #e7e7e7; color: black;} /* Gray */ 
+    .default:hover {background: #ddd;}
+    </style>
+    </head>
+    <body>
+
+
+<!-- All this stuff is for the hover over image--> 
+  </body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+
+<!-- Text--> 
+<h1> Ferris Wheel [Height vs. Distance]
+</h1>
+<p style = "font-size:2vw;"> Creator: Heather Johnson </p>
+
+<!-- The image of Heather and info related to her--> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 50%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 20px;
+  padding: 20px 30px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="avatar.png" alt="Avatar" class="image" style="width:50%">
+  <div class="middle">
+    <div class="text" style="width:70%">Related Research </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<p style = "font-size:2vw;"> 
+   Topics: <span style="background-color:Tomato; width: fit-content; margin: 0 auto;"> Sine Function </span> 
+    &nbsp <span style="background-color:yellow; width: fit-content; margin: 0 auto;">Trignometry </span> </p>
+</p>
+<p style = "font-size:2vw;"> In this activity, investigate and graph relationships between a Ferris wheel cart’s height from the ground and its total distance traveled. </p> 
+
+<!-- Info about the Screens! Slider and animation TBA--> 
+<h2> Screens </h2>
+<button class="btn success">Student Preview </button>
+  <IMG SRC="captured.gif", style = "50%">
+
+<div class="slidecontainer">
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+</p>
+</div>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+<!-- Info about User Data. VegaLite? --> 
+
+<h2>User Data </h2>
+
+
+<button class="btn success">Reviews</button>
+<button class="btn info">User Data</button>
+<button class="btn warning">Recommended Activities</button>
+<button class="btn danger">Community</button>
+<br> 
+
+<!-- VegaLite stuff-->
+    <div id="vis" > </div>
+
+    <script type="text/javascript" >
+      var yourVlSpec = {
+        $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+        description: 'A simple bar chart with embedded data.',
+        data: {
+          values: [
+            {Grade: '6', "# of Downloads": 28},
+            {Grade: '7', "# of Downloads": 55},
+            {Grade: '8', "# of Downloads": 91},
+            {Grade: '9', "# of Downloads": 70},
+            {Grade: '10', "# of Downloads": 81},
+            {Grade: '11', "# of Downloads": 53},
+            {Grade: '12', "# of Downloads": 19},
+            {Grade: 'Undergrad', "# of Downloads": 5},
+            
+          ]
+        },
+        mark: 'bar',
+        encoding: {
+          x: {field: 'Grade', type: 'ordinal', "sort":['6', '7', '8', '9', '10', '11', '12', 'Undergrad']},
+          y: {field: '# of Downloads', type: 'quantitative'}
+        }
+      };
+      vegaEmbed('#vis', yourVlSpec);
+    </script>
+
+</html>
