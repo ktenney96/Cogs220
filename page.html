@@ -1,19 +1,233 @@
-<html> 
-  <head>
-    <title>Hello World</title> 
-  </head>
- 
-  <body style="margin:30px"> 
-    <h1 style="text-align:center; background-color:aquamarine;">Welcome to Teacher Desmos!</h1> 
-    <p style="color:blue; text-align:left;  font-size:20px;"> Your Activities </p>
-    <hr align="left", style= "width:15%">
-    <a href="activity.html"> <img src="Wheel2.png" alt="Ferris Wheel" style="float:right;width:600px;height:200px;">
-        Published Activities <br> Edited Activties <br> Favorites </a>
+<html>
 
-    <p style="color:blue; text-align:left;  font-size:20px;"> Other Activities </p>
-    <hr align="left", style= "width:15%">
-    <p> Search <br> Get Suggestions <br> Popular Activites </p>
+<head>
+  <title>TeacherDesmos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    nav {
+      position: relative;
+      width: 200px;
+      background: #ccc;
+      padding: 20px;
+    }
 
+    /* .container {
+  float: left;
+  width: 15%;
+} */
+    .container {
+      position: relative;
+      width: 60%;
+    }
 
-  </body>
+    #rcorners1 {
+      float: center;
+      border-radius: 20px;
+      background: grey;
+      padding: 15px;
+      width: 99%;
+      height: 30px;
+    }
+
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: #008CBA;
+      padding: 20px;
+    }
+
+    .container:hover .overlay {
+      opacity: 1;
+    }
+
+    .text {
+  color: white;
+  font-size: 25px;
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  -webkit-transform: translate(-40%, -40%);
+  -ms-transform: translate(-40%, -40%);
+  transform: translate(-40%, -40%);
+  text-align: center;
+}
+    /* .text {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    } */
+  </style>
+</head>
+
+<body style="margin:30px">
+  <h1 id="rcorners1" style="text-align:center; background-color:lightgrey;">Find Activites Suited For You</h1>
+  <p style="text-align:center;">
+    <img src="Search.png" alt="search box" style="width:400px;height:60px;" class="center">
+  </p>
+
+  <table style="width:100%">
+    <tr>
+      <td valign="top">
+        <section>
+          <nav>
+            <p style="background-color:DodgeBlue; text-align:left;  font-size:20px;"> Filters: </p>
+            <form action="/action_page.php">
+              <label for="time"> Estimated Time:</label>
+              <select name="time" id="time">
+                <option value="1"> Under 20 mins</option>
+                <option value="2"> Under 45 mins</option>
+                <option value="3"> Under 1 hour</option>
+                <option value="4"> 1 hour+</option>
+              </select>
+              <br>
+              <label for="level"> Grade Level:</label>
+              <select name="level" id="level">
+                <option value="1"> Grade 6-8</option>
+                <option value="saab"> Grade 9</option>
+                <option value="opel"> Grade 10</option>
+                <option value="audi"> Grade 11</option>
+                <option value="audi"> Grade 12</option>
+                <option value="college"> Undergraduate </option>
+              </select>
+
+              <br>
+              <label for="level"> Peer Reviewed:</label>
+              <select name="level" id="level">
+                <option value="1"> Peer Reviewed Activties</option>
+                <option value="saab"> All Activties </option>
+              </select>
+              <br><br>
+              <input type="submit" value="Submit">
+            </form>
+            <hr>
+            <p style="background-color:DodgeBlue; text-align:left;  font-size:20px;"> Sort By: </p>
+            <p style="font-size:18px"> Creator (Alphabetical) <br> Highest Rating <br> Most Reviewed </p>
+
+            <hr>
+            <p style="background-color:DodgeBlue; text-align:left;  font-size:20px;"> Related Categories </p>
+            <p style="font-size:18px">Trigonometry <br> Sine Function <br> Sine Inverse Function <br> Graphing <br> ...
+            </p>
+
+            <hr>
+
+          </nav>
+        </section>
+      </td>
+      <td>
+        <article>
+          <!-- <a href="activity.html"> <img src="WheelFinal.png" alt="Ferris Wheel"  class="image" style="float:left;width:250px;height:300px;"></a> -->
+          <table>
+            <tr>
+              <td>
+          <div class="container">
+            <img src="NewWheel.png" alt="Ferris Wheel" class="image">
+            <div class="overlay">
+              <div style="width: fit-content; margin: 0 auto;">
+                <a href="activity.html" >
+                  <p style="background-color:white; text-align:center; background-size: 20%;"> Take A Look</p>
+                </a> 
+              </div>
+              <p style="text-align:center; color: white">In this activity, investigate and graph relationships between a Ferris wheel
+                cart’s height from the ground and its total distance traveled.
+              </p>
+              <p> 
+                <span style="background-color:Tomato; width: fit-content; margin: 0 auto;"> Sine Function </span> 
+                &nbsp <span style="background-color:yellow; width: fit-content; margin: 0 auto;">Trigonometry </span> </p>
+
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="container">
+            <img src="Sine2.png" alt="Sine2" class="image">
+            <div class="overlay">
+              <div style="width: fit-content; margin: 0 auto;">
+        
+                  <p style="background-color:white; text-align:center; background-size: 20%;"> Take A Look</p>
+              
+              </div>
+              <p style="text-align:center; color: white">The activity investigates the various properties of sine as a function and provides graphical displays to deepen understanding.
+              </p>
+              <p> 
+                <span style="background-color:Tomato; width: fit-content; margin: 0 auto;"> Sine Function </span> 
+                &nbsp <span style="background-color:yellow; width: fit-content; margin: 0 auto;">Trigonometry </span> 
+                &nbsp <span style="background-color:plum; width: fit-content; margin: 0 auto;">Function Properties </span></p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="container">
+            <img src="Car.png" alt="Ferris Wheel" class="image">
+            <div class="overlay">
+              <div style="width: fit-content; margin: 0 auto;">
+                
+                  <p style="background-color:white; text-align:center; background-size: 20%;"> Take A Look</p>
+               
+              </div>
+              <p style="text-align:center; color:white"> This activity shows real-world applicaitons for the sine function through the exploration of light waves from a car's headlights. 
+              </p>
+              <p>
+                <span style="background-color:Tomato; width: fit-content; margin: 0 auto;"> Sine Function </span> 
+                &nbsp <span style="background-color:yellow; width: fit-content; margin: 0 auto;">Trigonometry </span> 
+                <br> <span style="background-color:rgb(124, 179, 230); width: fit-content; margin: 0 auto;">Real-World Applications </span></p>
+              </p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="container">
+            <img src="Law.png" alt="Ferris Wheel" class="image">
+            <div class="overlay">
+              <div style="width: fit-content; margin: 0 auto;">
+               
+                  <p style="background-color:white; text-align:center; background-size: 20%;"> Take A Look</p>
+                
+              </div>
+              <p style="text-align:center; color:white"> This activity introduces students to the law of sines through dynamic triangle contexts. 
+         
+              </p>
+              <p>  <span style="background-color:Tomato; width: fit-content; margin: 0 auto;"> Sine Function </span> 
+                &nbsp <span style="background-color:yellow; width: fit-content; margin: 0 auto;">Trigonometry </span> 
+                <br> <span style="background-color:rgb(99, 224, 166); width: fit-content; margin: 0 auto;">Law of Sines </span></p>
+            </div>
+          </div>
+        </td>
+        </tr>
+        <tr>
+        <td>
+          <div class="container">
+            <br>
+            <br>
+            <img src="White.png" alt="Ferris Wheel" class="image">
+          </div>
+        </td>
+        </tr>
+        </table>
+
+        </article>
+      </td>
+    </tr>
+  </table>
+
+</body>
+
 </html>
